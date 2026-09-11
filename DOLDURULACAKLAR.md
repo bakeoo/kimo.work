@@ -63,8 +63,8 @@ Bunlar yalnızca metin doldurma işi değil; karar veya başka bir ekip işi ger
 | # | Alan | Nerede | Kaç yer |
 |---|---|---|---|
 | [ ] | `[şirket unvanı]` | 6 sayfanın footer'ı + `iletisim.html` §İşletme bilgileri + `kullanim-kosullari.html` §1/§8/§17 + `gizlilik-politikasi.html` giriş/§13 + `kvkk-aydinlatma-metni.html` §1 | 13 |
-| [ ] | `[iletişim e-postası]` | 5 sayfa — destek, veli başvuruları, itiraz, KVKK başvurusu, hesap silme talebi | 24 |
-| [ ] | `[telif bildirim e-postası]` | `iletisim.html` §Telif, `kullanim-kosullari.html` §9 | 4 |
+| [x] | `[iletişim e-postası]` → `kimo.iletisim@gmail.com` | 5 sayfa — destek, veli başvuruları, itiraz, KVKK başvurusu, hesap silme talebi | 24 |
+| [x] | `[telif bildirim e-postası]` → `kimo.iletisim@gmail.com` | `iletisim.html` §Telif, `kullanim-kosullari.html` §9 | 4 |
 | [ ] | `[açık adres]` | `iletisim.html`, `kullanim-kosullari.html` §17, `kvkk-aydinlatma-metni.html` §1 ve §11 (yazılı başvuru adresi), `gizlilik-politikasi.html` §13 | 5 |
 | [ ] | `[sicil no]` | `iletisim.html` — 5651 tanıtıcı bilgiler | 1 |
 | [ ] | `[vergi dairesi]` / `[vergi no]` | `iletisim.html` — 5651 tanıtıcı bilgiler | 2 |

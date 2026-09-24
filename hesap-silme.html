@@ -7,8 +7,10 @@
 <meta name="description" content="Kimo hesabınızı uygulama içinden veya e-posta ile nasıl sildireceğiniz; silindiğinde nelerin gittiği ve ne kadar sürdüğü.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&display=swap" rel="stylesheet">
 <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#170D14" media="(prefers-color-scheme: dark)">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Hesap silme — Kimo">
 <meta property="og:description" content="Kimo hesabınızı uygulama içinden veya e-posta ile nasıl sildireceğiniz; silindiğinde nelerin gittiği ve ne kadar sürdüğü.">
@@ -17,24 +19,22 @@
 <meta name="twitter:card" content="summary">
 <style>
   :root{
-    --paper:#FDFAF6; --card:#FFFFFF; --sunken:#F3EDE4; --line:#E7E1D7; --shadow:#EFE7DC;
-    --ink:#191713; --ink2:#5C564C; --ink3:#6E675C;
-    --coral:#E85D3D; --coral-deep:#C33A1C; --coral-ink:#B0351A; --coral-soft:#FFF0E7; --coral-ink2:#7A5A46;
-    --honey:#F2A93B; --honey-soft:#FFF3D9; --honey-ink:#725A32;
-    --mint:#1B9B6B; --mint-soft:#E6F6EE; --mint-ink:#0E6E4C;
+    --paper:#FFFFFF; --card:#F3F3F5; --sunken:#F3F3F5; --line:#ECECEF; --shadow:#E2E2E7;
+    --ink:#1B1A1F; --ink2:#6B6A73; --ink3:#6B6A73;
+    --coral:#C8174A; --coral-deep:#8E0E33; --coral-ink:#B8163F; --coral-soft:#FCEBF0; --coral-ink2:#6B6A73;
+    --photo:#F3F3F5;
   }
   @media (prefers-color-scheme: dark){
     :root{
-      --paper:#17140F; --card:#221E19; --sunken:#2C2620; --line:#3A332B; --shadow:#000000;
-      --ink:#F7F3EE; --ink2:#B8B0A4; --ink3:#A59D92;
-      --coral-ink:#FF9273; --coral-soft:#36211A; --coral-ink2:#F0B79A;
-      --honey-soft:#332715; --honey-ink:#F0CB84;
-      --mint-soft:#14332A; --mint-ink:#63D8A6;
+      --paper:#170D14; --card:#241620; --sunken:#241620; --line:#33212D; --shadow:#0B0609;
+      --ink:#FBEFF3; --ink2:#B79AA8; --ink3:#B79AA8;
+      --coral:#E8285F; --coral-deep:#9C1240; --coral-ink:#F0607F; --coral-soft:#3A1627; --coral-ink2:#B79AA8;
+      --photo:#241620;
     }
   }
   html{ scroll-behavior:smooth; }
-  body{ margin:0; background:var(--paper,#FDFAF6); color:var(--ink,#191713); font-family:'DM Sans',system-ui,sans-serif; -webkit-font-smoothing:antialiased; }
-  a{ color:var(--coral-ink,#B0351A); text-decoration:none; }
+  body{ margin:0; background:var(--paper,#FFFFFF); color:var(--ink,#1B1A1F); font-family:'Nunito',system-ui,sans-serif;font-weight:500; -webkit-font-smoothing:antialiased; }
+  a{ color:var(--coral-ink,#B8163F); text-decoration:none; }
   a:hover{ text-decoration:underline; }
   *{ box-sizing:border-box; }
 </style>
@@ -42,87 +42,78 @@
 <body>
 
 <div style="display:flex;flex-direction:column;align-items:center;width:100%">
-  <header style="width:100%;display:flex;justify-content:center;border-bottom:1px solid var(--line,#E7E1D7);background:var(--paper,#FDFAF6);position:sticky;top:0;z-index:10">
+  <header style="width:100%;display:flex;justify-content:center;border-bottom:1px solid var(--line,#ECECEF);background:var(--paper,#FFFFFF);position:sticky;top:0;z-index:10">
     <div style="width:100%;max-width:920px;padding:12px 24px;display:flex;align-items:center;gap:14px;flex-wrap:wrap">
-      <a href="./index.html" style="min-height:44px;display:flex;align-items:center;gap:10px;color:var(--ink,#191713)">
-        <svg width="34" height="30" viewBox="42 16 216 190" style="flex:none">
-          <path d="M112 72C100 38 84 24 68 30 52 36 50 62 62 82 78 92 100 86 112 72Z" fill="#B87A45"/><path d="M92 60C86 44 80 36 72 38 64 40 60 52 65 64 73 70 86 68 92 60Z" fill="#E9A876"/>
-          <path d="M188 72C200 38 216 24 232 30 248 36 250 62 238 82 222 92 200 86 188 72Z" fill="#B87A45"/><path d="M208 60C214 44 220 36 228 38 236 40 240 52 235 64 227 70 214 68 208 60Z" fill="#F5DCBB"/>
-          <path d="M150 40C112 40 84 56 72 82 63 101 62 118 62 132 62 168 100 198 150 198 200 198 238 168 238 132 238 118 237 101 228 82 216 56 188 40 150 40Z" fill="#C98A4B"/>
-          <path d="M150 116C176 116 194 130 194 148 194 168 174 180 150 180 126 180 106 168 106 148 106 130 124 116 150 116Z" fill="#F5DCBB"/>
-          <ellipse cx="116" cy="108" rx="11.5" ry="13" fill="#2A1F16"/><ellipse cx="120" cy="103" rx="4" ry="3.4" fill="#FFFFFF"/>
-          <ellipse cx="184" cy="108" rx="11.5" ry="13" fill="#2A1F16"/><ellipse cx="188" cy="103" rx="4" ry="3.4" fill="#FFFFFF"/>
-          <path d="M150 154v7M150 161c-7.5 0-12-4-12-8.5M150 161c7.5 0 12-4 12-8.5" stroke="#2A1F16" stroke-width="3.8" fill="none" stroke-linecap="round"/>
-          <path d="M150 130C159 130 165 134 165 140 165 146 158 150 150 150 142 150 135 146 135 140 135 134 141 130 150 130Z" fill="#2A1F16"/>
-        </svg>
-        <span style="font-family:'Baloo 2',sans-serif;font-size:22px;font-weight:700">Kimo</span>
+      <a href="./index.html" style="min-height:44px;display:flex;align-items:center;gap:10px;color:var(--ink,#1B1A1F)">
+        <img src="./logo-rozet.svg" width="34" height="33" alt="" style="flex:none">
+        <span style="font-family:'Nunito',sans-serif;font-size:25px;font-weight:900;letter-spacing:-0.02em;line-height:1">kimo</span>
       </a>
       <nav style="flex:1;display:flex;align-items:center;justify-content:flex-end;gap:2px;flex-wrap:wrap">
-        <a href="./kullanim-kosullari.html" style="min-height:44px;display:flex;align-items:center;padding:0 10px;font-size:14.5px;font-weight:500;color:var(--ink2,#5C564C)">Kullanım Koşulları</a>
-        <a href="./gizlilik-politikasi.html" style="min-height:44px;display:flex;align-items:center;padding:0 10px;font-size:14.5px;font-weight:500;color:var(--ink2,#5C564C)">Gizlilik</a>
-        <a href="./kvkk-aydinlatma-metni.html" style="min-height:44px;display:flex;align-items:center;padding:0 10px;font-size:14.5px;font-weight:500;color:var(--ink2,#5C564C)">KVKK</a>
-        <a href="./hesap-silme.html" style="min-height:44px;display:flex;align-items:center;padding:0 10px;font-size:14.5px;font-weight:600;color:var(--coral-ink,#B0351A)">Hesap silme</a>
-        <a href="./iletisim.html" style="min-height:44px;display:flex;align-items:center;padding:0 10px;font-size:14.5px;font-weight:500;color:var(--ink2,#5C564C)">İletişim</a>
+        <a href="./kullanim-kosullari.html" style="min-height:44px;display:flex;align-items:center;padding:0 10px;font-size:14.5px;font-weight:500;color:var(--ink2,#6B6A73)">Kullanım Koşulları</a>
+        <a href="./gizlilik-politikasi.html" style="min-height:44px;display:flex;align-items:center;padding:0 10px;font-size:14.5px;font-weight:500;color:var(--ink2,#6B6A73)">Gizlilik</a>
+        <a href="./kvkk-aydinlatma-metni.html" style="min-height:44px;display:flex;align-items:center;padding:0 10px;font-size:14.5px;font-weight:500;color:var(--ink2,#6B6A73)">KVKK</a>
+        <a href="./hesap-silme.html" style="min-height:44px;display:flex;align-items:center;padding:0 10px;font-size:14.5px;font-weight:700;color:var(--coral-ink,#B8163F)">Hesap silme</a>
+        <a href="./iletisim.html" style="min-height:44px;display:flex;align-items:center;padding:0 10px;font-size:14.5px;font-weight:500;color:var(--ink2,#6B6A73)">İletişim</a>
       </nav>
     </div>
   </header>
   <main style="width:100%;max-width:920px;padding:40px 24px 0;display:flex;flex-direction:column;gap:24px">
     <div style="display:flex;flex-direction:column;gap:12px;max-width:68ch">
-      <a href="./index.html" style="min-height:44px;display:flex;align-items:center;gap:6px;font-size:14.5px;font-weight:600;color:var(--ink2,#5C564C);align-self:flex-start">
+      <a href="./index.html" style="min-height:44px;display:flex;align-items:center;gap:6px;font-size:14.5px;font-weight:700;color:var(--ink2,#6B6A73);align-self:flex-start">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>Kimo</a>
-      <h1 style="margin:0;font-family:'Baloo 2',sans-serif;font-size:clamp(30px,5vw,44px);font-weight:700;line-height:1.1;letter-spacing:-0.01em">Hesap silme</h1>
-      <p style="margin:0;font-size:17px;line-height:1.65;color:var(--ink2,#5C564C)">Kimo hesabınızı istediğiniz zaman silebilirsiniz. Uygulamaya erişiminiz olmasa da bu sayfadaki yolla talep edebilirsiniz.</p>
+      <h1 style="margin:0;font-family:'Nunito',sans-serif;font-size:clamp(30px,5vw,44px);font-weight:900;line-height:1.1;letter-spacing:-0.01em">Hesap silme</h1>
+      <p style="margin:0;font-size:17px;line-height:1.65;color:var(--ink2,#6B6A73)">Kimo hesabınızı istediğiniz zaman silebilirsiniz. Uygulamaya erişiminiz olmasa da bu sayfadaki yolla talep edebilirsiniz.</p>
     </div>
     <article style="max-width:68ch;display:flex;flex-direction:column;gap:14px;padding-bottom:24px">
-      <h2 id="uygulama-ici" style="margin:14px 0 0;font-family:'Baloo 2',sans-serif;font-size:clamp(21px,3vw,25px);font-weight:600;line-height:1.25;scroll-margin-top:84px">Uygulama içinden silme</h2>
-      <p style="margin:0;font-size:16px;line-height:1.75;color:var(--ink2,#5C564C)">En hızlı yol budur ve ek bir onay beklemez.</p>
-      <div style="background:var(--card,#FFFFFF);border-radius:22px;padding:22px;box-shadow:0 2px 0 var(--shadow,#EFE7DC);display:flex;flex-direction:column;gap:12px"><div style="display:flex;flex-direction:column;gap:10px">
-          <div style="display:flex;gap:11px;align-items:flex-start"><span style="width:24px;height:24px;border-radius:12px;background:var(--coral-soft,#FFF0E7);color:var(--coral-ink,#B0351A);font-family:'Baloo 2',sans-serif;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;flex:none">1</span><span style="flex:1;font-size:16px;line-height:1.6">Uygulamayı açın ve <strong style="color:var(--ink,#191713)">Profil</strong> sekmesine gidin.</span></div>
-          <div style="display:flex;gap:11px;align-items:flex-start"><span style="width:24px;height:24px;border-radius:12px;background:var(--coral-soft,#FFF0E7);color:var(--coral-ink,#B0351A);font-family:'Baloo 2',sans-serif;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;flex:none">2</span><span style="flex:1;font-size:16px;line-height:1.6"><strong style="color:var(--ink,#191713)">Ayarlar</strong>'ı açın.</span></div>
-          <div style="display:flex;gap:11px;align-items:flex-start"><span style="width:24px;height:24px;border-radius:12px;background:var(--coral-soft,#FFF0E7);color:var(--coral-ink,#B0351A);font-family:'Baloo 2',sans-serif;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;flex:none">3</span><span style="flex:1;font-size:16px;line-height:1.6">En alttaki <strong style="color:var(--ink,#191713)">Hesabımı sil</strong>’e dokunun ve onaylayın.</span></div>
+      <h2 id="uygulama-ici" style="margin:14px 0 0;font-family:'Nunito',sans-serif;font-size:clamp(21px,3vw,25px);font-weight:800;line-height:1.25;scroll-margin-top:84px">Uygulama içinden silme</h2>
+      <p style="margin:0;font-size:16px;line-height:1.75;color:var(--ink2,#6B6A73)">En hızlı yol budur ve ek bir onay beklemez.</p>
+      <div style="background:var(--card,#FFFFFF);border-radius:22px;padding:22px;box-shadow:0 2px 0 var(--shadow,#E2E2E7);display:flex;flex-direction:column;gap:12px"><div style="display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;gap:11px;align-items:flex-start"><span style="width:24px;height:24px;border-radius:12px;background:var(--coral-soft,#FCEBF0);color:var(--coral-ink,#B8163F);font-family:'Nunito',sans-serif;font-size:14px;font-weight:900;display:flex;align-items:center;justify-content:center;flex:none">1</span><span style="flex:1;font-size:16px;line-height:1.6">Uygulamayı açın ve <strong style="color:var(--ink,#1B1A1F)">Profil</strong> sekmesine gidin.</span></div>
+          <div style="display:flex;gap:11px;align-items:flex-start"><span style="width:24px;height:24px;border-radius:12px;background:var(--coral-soft,#FCEBF0);color:var(--coral-ink,#B8163F);font-family:'Nunito',sans-serif;font-size:14px;font-weight:900;display:flex;align-items:center;justify-content:center;flex:none">2</span><span style="flex:1;font-size:16px;line-height:1.6"><strong style="color:var(--ink,#1B1A1F)">Ayarlar</strong>'ı açın.</span></div>
+          <div style="display:flex;gap:11px;align-items:flex-start"><span style="width:24px;height:24px;border-radius:12px;background:var(--coral-soft,#FCEBF0);color:var(--coral-ink,#B8163F);font-family:'Nunito',sans-serif;font-size:14px;font-weight:900;display:flex;align-items:center;justify-content:center;flex:none">3</span><span style="flex:1;font-size:16px;line-height:1.6">En alttaki <strong style="color:var(--ink,#1B1A1F)">Hesabımı sil</strong>’e dokunun ve onaylayın.</span></div>
         </div></div>
 
-      <h2 id="e-posta-ile" style="margin:14px 0 0;font-family:'Baloo 2',sans-serif;font-size:clamp(21px,3vw,25px);font-weight:600;line-height:1.25;scroll-margin-top:84px">Uygulamaya erişiminiz yoksa</h2>
-      <p style="margin:0;font-size:16px;line-height:1.75;color:var(--ink2,#5C564C)">Telefonunuz değiştiyse veya uygulamayı kaldırdıysanız, hesabınızı e-postayla sildirebilirsiniz.</p>
-      <div style="background:var(--card,#FFFFFF);border-radius:22px;padding:22px;box-shadow:0 2px 0 var(--shadow,#EFE7DC);display:flex;flex-direction:column;gap:12px"><span style="font-family:'Baloo 2',sans-serif;font-size:18px;font-weight:600">Silme talebi gönderin</span>
-        <p style="margin:0;font-size:16px;line-height:1.75;color:var(--ink2,#5C564C)">Hesabınıza kayıtlı e-posta adresinden <a href="mailto:kimo.iletisim@gmail.com" style="font-weight:600">kimo.iletisim@gmail.com</a> adresine yazın. Konu satırına <strong style="color:var(--ink,#191713)">“Hesap silme talebi”</strong> yazmanız yeterlidir.</p>
-        <p style="margin:0;font-size:16px;line-height:1.75;color:var(--ink2,#5C564C)">Kimliğinizi doğrulamak için yalnızca hesabınıza kayıtlı adresten yazmanızı isteriz; ek belge talep etmeyiz. Farklı bir adresten yazıyorsanız hesabın kullanıcı adını belirtin, doğrulama için kayıtlı adrese bir onay mesajı göndeririz.</p></div>
+      <h2 id="e-posta-ile" style="margin:14px 0 0;font-family:'Nunito',sans-serif;font-size:clamp(21px,3vw,25px);font-weight:800;line-height:1.25;scroll-margin-top:84px">Uygulamaya erişiminiz yoksa</h2>
+      <p style="margin:0;font-size:16px;line-height:1.75;color:var(--ink2,#6B6A73)">Telefonunuz değiştiyse veya uygulamayı kaldırdıysanız, hesabınızı e-postayla sildirebilirsiniz.</p>
+      <div style="background:var(--card,#FFFFFF);border-radius:22px;padding:22px;box-shadow:0 2px 0 var(--shadow,#E2E2E7);display:flex;flex-direction:column;gap:12px"><span style="font-family:'Nunito',sans-serif;font-size:18px;font-weight:800">Silme talebi gönderin</span>
+        <p style="margin:0;font-size:16px;line-height:1.75;color:var(--ink2,#6B6A73)">Hesabınıza kayıtlı e-posta adresinden <a href="mailto:kimo.iletisim@gmail.com" style="font-weight:700">kimo.iletisim@gmail.com</a> adresine yazın. Konu satırına <strong style="color:var(--ink,#1B1A1F)">“Hesap silme talebi”</strong> yazmanız yeterlidir.</p>
+        <p style="margin:0;font-size:16px;line-height:1.75;color:var(--ink2,#6B6A73)">Kimliğinizi doğrulamak için yalnızca hesabınıza kayıtlı adresten yazmanızı isteriz; ek belge talep etmeyiz. Farklı bir adresten yazıyorsanız hesabın kullanıcı adını belirtin, doğrulama için kayıtlı adrese bir onay mesajı göndeririz.</p></div>
 
-      <h2 id="ne-siliniyor" style="margin:14px 0 0;font-family:'Baloo 2',sans-serif;font-size:clamp(21px,3vw,25px);font-weight:600;line-height:1.25;scroll-margin-top:84px">Silindiğinde ne oluyor</h2>
-      <p style="margin:0;font-size:16px;line-height:1.75;color:var(--ink2,#5C564C)">Silme <strong style="color:var(--ink,#191713)">kalıcıdır</strong>. Bekleme süresi, geri alma penceresi veya arşivleme yoktur; işlem tamamlandıktan sonra veriler geri getirilemez.</p>
+      <h2 id="ne-siliniyor" style="margin:14px 0 0;font-family:'Nunito',sans-serif;font-size:clamp(21px,3vw,25px);font-weight:800;line-height:1.25;scroll-margin-top:84px">Silindiğinde ne oluyor</h2>
+      <p style="margin:0;font-size:16px;line-height:1.75;color:var(--ink2,#6B6A73)">Silme <strong style="color:var(--ink,#1B1A1F)">kalıcıdır</strong>. Bekleme süresi, geri alma penceresi veya arşivleme yoktur; işlem tamamlandıktan sonra veriler geri getirilemez.</p>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px">
-        <div style="background:var(--card,#FFFFFF);border-radius:22px;padding:20px;box-shadow:0 2px 0 var(--shadow,#EFE7DC);display:flex;flex-direction:column;gap:10px">
-          <span style="font-family:'Baloo 2',sans-serif;font-size:17px;font-weight:600;color:var(--coral-ink,#B0351A)">Silinenler</span>
-          <ul style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:7px"><li style="font-size:16px;line-height:1.7;color:var(--ink2,#5C564C)">Hesabınız ve giriş bilgileriniz</li><li style="font-size:16px;line-height:1.7;color:var(--ink2,#5C564C)">Takma adınız ve profil fotoğrafınız</li><li style="font-size:16px;line-height:1.7;color:var(--ink2,#5C564C)">Yüklediğiniz tüm soru fotoğrafları</li><li style="font-size:16px;line-height:1.7;color:var(--ink2,#5C564C)">Hata defteriniz, notlarınız ve tekrar planınız</li><li style="font-size:16px;line-height:1.7;color:var(--ink2,#5C564C)">XP, seri, lig geçmişi ve rozetleriniz</li><li style="font-size:16px;line-height:1.7;color:var(--ink2,#5C564C)">Arkadaşlıklarınız ve gönderdiğiniz sorular</li></ul>
+        <div style="background:var(--card,#FFFFFF);border-radius:22px;padding:20px;box-shadow:0 2px 0 var(--shadow,#E2E2E7);display:flex;flex-direction:column;gap:10px">
+          <span style="font-family:'Nunito',sans-serif;font-size:17px;font-weight:800;color:var(--coral-ink,#B8163F)">Silinenler</span>
+          <ul style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:7px"><li style="font-size:16px;line-height:1.7;color:var(--ink2,#6B6A73)">Hesabınız ve giriş bilgileriniz</li><li style="font-size:16px;line-height:1.7;color:var(--ink2,#6B6A73)">Takma adınız ve profil fotoğrafınız</li><li style="font-size:16px;line-height:1.7;color:var(--ink2,#6B6A73)">Yüklediğiniz tüm soru fotoğrafları</li><li style="font-size:16px;line-height:1.7;color:var(--ink2,#6B6A73)">Hata defteriniz, notlarınız ve tekrar planınız</li><li style="font-size:16px;line-height:1.7;color:var(--ink2,#6B6A73)">XP, seri, lig geçmişi ve rozetleriniz</li><li style="font-size:16px;line-height:1.7;color:var(--ink2,#6B6A73)">Arkadaşlıklarınız ve gönderdiğiniz sorular</li></ul>
         </div>
-        <div style="background:var(--card,#FFFFFF);border-radius:22px;padding:20px;box-shadow:0 2px 0 var(--shadow,#EFE7DC);display:flex;flex-direction:column;gap:10px">
-          <span style="font-family:'Baloo 2',sans-serif;font-size:17px;font-weight:600;color:var(--ink,#191713)">Kalabilecekler</span>
-          <ul style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:7px"><li style="font-size:16px;line-height:1.7;color:var(--ink2,#5C564C)">Yasal saklama yükümlülüğü bulunan kayıtlar (ör. onay defterindeki zaman damgaları), mevzuatın öngördüğü süre boyunca</li><li style="font-size:16px;line-height:1.7;color:var(--ink2,#5C564C)">Hakkınızda yapılmış ve incelemesi süren şikâyet kayıtları</li><li style="font-size:16px;line-height:1.7;color:var(--ink2,#5C564C)">Daha önce bir arkadaşınıza gönderdiğiniz bir içerik, onun tarafında kalabilir</li><li style="font-size:16px;line-height:1.7;color:var(--ink2,#5C564C)">Hata kayıtlarındaki teknik izler, sağlayıcının saklama süresi boyunca</li></ul>
+        <div style="background:var(--card,#FFFFFF);border-radius:22px;padding:20px;box-shadow:0 2px 0 var(--shadow,#E2E2E7);display:flex;flex-direction:column;gap:10px">
+          <span style="font-family:'Nunito',sans-serif;font-size:17px;font-weight:800;color:var(--ink,#1B1A1F)">Kalabilecekler</span>
+          <ul style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:7px"><li style="font-size:16px;line-height:1.7;color:var(--ink2,#6B6A73)">Yasal saklama yükümlülüğü bulunan kayıtlar (ör. onay defterindeki zaman damgaları), mevzuatın öngördüğü süre boyunca</li><li style="font-size:16px;line-height:1.7;color:var(--ink2,#6B6A73)">Hakkınızda yapılmış ve incelemesi süren şikâyet kayıtları</li><li style="font-size:16px;line-height:1.7;color:var(--ink2,#6B6A73)">Daha önce bir arkadaşınıza gönderdiğiniz bir içerik, onun tarafında kalabilir</li><li style="font-size:16px;line-height:1.7;color:var(--ink2,#6B6A73)">Hata kayıtlarındaki teknik izler, sağlayıcının saklama süresi boyunca</li></ul>
         </div>
       </div>
 
-      <h2 id="sure" style="margin:14px 0 0;font-family:'Baloo 2',sans-serif;font-size:clamp(21px,3vw,25px);font-weight:600;line-height:1.25;scroll-margin-top:84px">Ne kadar sürede işlenir</h2>
-      <div style="background:var(--card,#FFFFFF);border-radius:22px;padding:22px;box-shadow:0 2px 0 var(--shadow,#EFE7DC);display:flex;flex-direction:column;gap:12px"><div style="display:flex;flex-direction:column;gap:10px">
-          <div style="display:flex;gap:12px;align-items:baseline"><span style="width:120px;flex:none;font-family:'Baloo 2',sans-serif;font-size:16px;font-weight:600">Anında</span><span style="flex:1;font-size:15.5px;line-height:1.6;color:var(--ink2,#5C564C)">Uygulama içinden silme: onayladığınız anda gerçekleşir.</span></div>
-          <div style="height:1px;background:var(--line,#E7E1D7)"></div>
-          <div style="display:flex;gap:12px;align-items:baseline"><span style="width:120px;flex:none;font-family:'Baloo 2',sans-serif;font-size:16px;font-weight:600">En geç 30 gün</span><span style="flex:1;font-size:15.5px;line-height:1.6;color:var(--ink2,#5C564C)">E-posta ile gelen talepler; uygulamada genellikle birkaç iş günü içinde tamamlanır.</span></div>
+      <h2 id="sure" style="margin:14px 0 0;font-family:'Nunito',sans-serif;font-size:clamp(21px,3vw,25px);font-weight:800;line-height:1.25;scroll-margin-top:84px">Ne kadar sürede işlenir</h2>
+      <div style="background:var(--card,#FFFFFF);border-radius:22px;padding:22px;box-shadow:0 2px 0 var(--shadow,#E2E2E7);display:flex;flex-direction:column;gap:12px"><div style="display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;gap:12px;align-items:baseline"><span style="width:120px;flex:none;font-family:'Nunito',sans-serif;font-size:16px;font-weight:800">Anında</span><span style="flex:1;font-size:15.5px;line-height:1.6;color:var(--ink2,#6B6A73)">Uygulama içinden silme: onayladığınız anda gerçekleşir.</span></div>
+          <div style="height:1px;background:var(--line,#ECECEF)"></div>
+          <div style="display:flex;gap:12px;align-items:baseline"><span style="width:120px;flex:none;font-family:'Nunito',sans-serif;font-size:16px;font-weight:800">En geç 30 gün</span><span style="flex:1;font-size:15.5px;line-height:1.6;color:var(--ink2,#6B6A73)">E-posta ile gelen talepler; uygulamada genellikle birkaç iş günü içinde tamamlanır.</span></div>
         </div></div>
-      <p style="margin:0;font-size:16px;line-height:1.75;color:var(--ink2,#5C564C)">Silme yerine yalnızca bir soruyu veya fotoğrafı kaldırmak istiyorsanız, bunu uygulama içinden tek tek yapabilirsiniz. Verilerinizin bir kopyasını istemek için <a href="./kvkk-aydinlatma-metni.html">KVKK Aydınlatma Metni</a>'ndeki başvuru yolunu kullanın.</p>
+      <p style="margin:0;font-size:16px;line-height:1.75;color:var(--ink2,#6B6A73)">Silme yerine yalnızca bir soruyu veya fotoğrafı kaldırmak istiyorsanız, bunu uygulama içinden tek tek yapabilirsiniz. Verilerinizin bir kopyasını istemek için <a href="./kvkk-aydinlatma-metni.html">KVKK Aydınlatma Metni</a>'ndeki başvuru yolunu kullanın.</p>
     </article>
   </main>
-  <footer style="width:100%;display:flex;justify-content:center;margin-top:72px;border-top:1px solid var(--line,#E7E1D7);background:var(--sunken,#F3EDE4)">
+  <footer style="width:100%;display:flex;justify-content:center;margin-top:72px;border-top:1px solid var(--line,#ECECEF);background:var(--sunken,#F3F3F5)">
     <div style="width:100%;max-width:920px;padding:32px 24px;display:flex;gap:28px;flex-wrap:wrap;align-items:flex-start">
       <div style="flex:1;min-width:220px;display:flex;flex-direction:column;gap:6px">
-        <span style="font-family:'Baloo 2',sans-serif;font-size:18px;font-weight:700">Kimo</span>
-        <span style="font-size:13.5px;line-height:1.6;color:var(--ink2,#5C564C)">© 2026 Ebubekir Taha Karagöz</span>
+        <div style="display:flex;align-items:center;gap:9px"><img src="./logo-rozet.svg" width="28" height="27" alt="" style="flex:none"><span style="font-family:'Nunito',sans-serif;font-size:21px;font-weight:900;letter-spacing:-0.02em;line-height:1">kimo</span></div>
+        <span style="font-size:13.5px;line-height:1.6;color:var(--ink2,#6B6A73)">© 2026 Ebubekir Taha Karagöz</span>
       </div>
       <div style="display:flex;flex-wrap:wrap;gap:2px">
-        <a href="./index.html" style="min-height:44px;display:flex;align-items:center;padding:0 10px;font-size:14.5px;color:var(--ink2,#5C564C)">Ana sayfa</a>
-        <a href="./kullanim-kosullari.html" style="min-height:44px;display:flex;align-items:center;padding:0 10px;font-size:14.5px;color:var(--ink2,#5C564C)">Kullanım Koşulları</a>
-        <a href="./gizlilik-politikasi.html" style="min-height:44px;display:flex;align-items:center;padding:0 10px;font-size:14.5px;color:var(--ink2,#5C564C)">Gizlilik</a>
-        <a href="./kvkk-aydinlatma-metni.html" style="min-height:44px;display:flex;align-items:center;padding:0 10px;font-size:14.5px;color:var(--ink2,#5C564C)">KVKK</a>
-        <a href="./hesap-silme.html" style="min-height:44px;display:flex;align-items:center;padding:0 10px;font-size:14.5px;color:var(--ink2,#5C564C)">Hesap silme</a>
-        <a href="./iletisim.html" style="min-height:44px;display:flex;align-items:center;padding:0 10px;font-size:14.5px;color:var(--ink2,#5C564C)">İletişim</a>
+        <a href="./index.html" style="min-height:44px;display:flex;align-items:center;padding:0 10px;font-size:14.5px;color:var(--ink2,#6B6A73)">Ana sayfa</a>
+        <a href="./kullanim-kosullari.html" style="min-height:44px;display:flex;align-items:center;padding:0 10px;font-size:14.5px;color:var(--ink2,#6B6A73)">Kullanım Koşulları</a>
+        <a href="./gizlilik-politikasi.html" style="min-height:44px;display:flex;align-items:center;padding:0 10px;font-size:14.5px;color:var(--ink2,#6B6A73)">Gizlilik</a>
+        <a href="./kvkk-aydinlatma-metni.html" style="min-height:44px;display:flex;align-items:center;padding:0 10px;font-size:14.5px;color:var(--ink2,#6B6A73)">KVKK</a>
+        <a href="./hesap-silme.html" style="min-height:44px;display:flex;align-items:center;padding:0 10px;font-size:14.5px;color:var(--ink2,#6B6A73)">Hesap silme</a>
+        <a href="./iletisim.html" style="min-height:44px;display:flex;align-items:center;padding:0 10px;font-size:14.5px;color:var(--ink2,#6B6A73)">İletişim</a>
       </div>
     </div>
   </footer>

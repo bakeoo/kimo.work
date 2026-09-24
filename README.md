@@ -13,7 +13,7 @@ Bu depo uygulamanın tanıtım sitesini ve zorunlu hukuki metinlerini barındır
 |---|---|
 | `index.html` | Ana sayfa — tanıtım, özellikler, Kimo Plus, SSS |
 | `kullanim-kosullari.html` | Kullanım Koşulları (sürüm 1.3) |
-| `gizlilik-politikasi.html` | Gizlilik Politikası (sürüm 1.3) |
+| `gizlilik-politikasi.html` | Gizlilik Politikası (sürüm 1.4) |
 | `kvkk-aydinlatma-metni.html` | KVKK Aydınlatma Metni (sürüm 1.3) |
 | `hesap-silme.html` | Hesap silme — Google Play'in zorunlu tuttuğu web sayfası |
 | `iletisim.html` | Destek, telif bildirimi, 5651 tanıtıcı bilgiler |
